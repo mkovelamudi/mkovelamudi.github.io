@@ -1,0 +1,17 @@
+
+{
+    "skills": [
+        {
+            "skill_name":"java",
+            "skill_text":"Hello java"
+        },
+        {
+            "skill_name":"python",
+            "skill_text":"Hello python"
+        },
+        {
+            "skill_name":"html",
+            "skill_text":"Hello html"
+        }
+    ]
+ }

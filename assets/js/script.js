@@ -50,8 +50,8 @@ for (let i = 0; i < testimonialsItem.length; i++) {
 }
 
 // add click event to modal close button
-modalCloseBtn.addEventListener("click", testimonialsModalFunc);
-overlay.addEventListener("click", testimonialsModalFunc);
+// modalCloseBtn.addEventListener("click", testimonialsModalFunc);
+// overlay.addEventListener("click", testimonialsModalFunc);
 
 
 
@@ -61,19 +61,19 @@ const selectItems = document.querySelectorAll("[data-select-item]");
 const selectValue = document.querySelector("[data-selecct-value]");
 const filterBtn = document.querySelectorAll("[data-filter-btn]");
 
-select.addEventListener("click", function () { elementToggleFunc(this); });
+// select.addEventListener("click", function () { elementToggleFunc(this); });
 
 // add event in all select items
-for (let i = 0; i < selectItems.length; i++) {
-  selectItems[i].addEventListener("click", function () {
+// for (let i = 0; i < selectItems.length; i++) {
+//   selectItems[i].addEventListener("click", function () {
 
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    elementToggleFunc(select);
-    filterFunc(selectedValue);
+//     let selectedValue = this.innerText.toLowerCase();
+//     selectValue.innerText = this.innerText;
+//     elementToggleFunc(select);
+//     filterFunc(selectedValue);
 
-  });
-}
+//   });
+// }
 
 // filter variables
 const filterItems = document.querySelectorAll("[data-filter-item]");
@@ -106,15 +106,12 @@ for (let i = 0; i < filterBtn.length; i++) {
     filterFunc(selectedValue);
 
     lastClickedBtn.classList.remove("active");
-    this.classList.add("active");
+    this.classList.add("active");o
     lastClickedBtn = this;
 
   });
 
 }
-
-
-
 // contact form variables
 const form = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");
@@ -156,4 +153,42 @@ for (let i = 0; i < navigationLinks.length; i++) {
     }
 
   });
+
 }
+
+// skills variables
+const skillssItem = document.querySelectorAll("[skill-item]");
+const skillContainer = document.querySelector("[skill-modal-container]");
+const skillCloseBtn = document.querySelector("[skill-modal-close-btn]");
+const skilloverlay = document.querySelector("[skill-overlay]");
+
+// modal variable
+const skillImg = document.querySelector("[skill-avatar]");
+const skillTitle = document.querySelector("[skill-title]");
+const skillText = document.querySelector("[skills-text]");
+
+// modal toggle function
+const skillsModalFunc = function () {
+  skillContainer.classList.toggle("active");
+  skilloverlay.classList.toggle("active");
+}
+
+// add click event to all modal items
+for (let i = 0; i < skillssItem.length; i++) {
+
+  skillssItem[i].addEventListener("click", function () {
+
+    skillImg.src = this.querySelector("[skill-avatar]").src;
+    skillImg.alt = this.querySelector("[skill-avatar]").alt;
+    skillTitle.innerHTML = this.querySelector("[skill-title]").innerHTML;
+    skillText.innerHTML = this.querySelector("[skills-text]").innerHTML;
+
+    skillsModalFunc();
+
+  });
+
+}
+
+// add click event to modal close button
+// skillCloseBtn.addEventListener("click", skillsModalFunc);
+// skilloverlay.addEventListener("click", skillsModalFunc);
